@@ -10,7 +10,7 @@ public class TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -112,14 +112,28 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
-    // Print a list of jobs
+    // Print a list of jobs THIS IS YOUR joB!
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        System.out.println("printJobs is not implemented yet");
+//      If Array of jobs is empty : "No Results"
+        if (someJobs.isEmpty()) {
+            System.out.println("No results");
+//          If it is g2g iterate
+            } else {
+//            Looping through each HashMap in ArrayList
+            for (HashMap<String, String> job : someJobs) {
+//                Looping through each key:value pair in HashMaps
+                for (Map.Entry<String, String> prop : job.entrySet()) {
+//                    Printing through each key:value
+                    System.out.println(prop.getKey() + " : " + prop.getValue());
+                }
+//                for how long it took to figure out where this belonged -__- *FACEPALM*
+                System.out.println("*****");
+            }
+        }
     }
 }
