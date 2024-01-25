@@ -59,7 +59,7 @@ public class TechJobs {
 
                 // What is their search term?
                 System.out.println("\nSearch term:");
-                String searchTerm = in.nextLine();
+                String searchTerm = in.nextLine().toLowerCase();
 
                 if (searchField.equals("all")) {
                     printJobs(JobData.findByValue(searchTerm));
@@ -119,19 +119,19 @@ public class TechJobs {
 
     // Print a list of jobs THIS IS YOUR joB!
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-//      If Array of jobs is empty : "No Results"
+//      if Array of jobs is empty : "No Results"
         if (someJobs.isEmpty()) {
-            System.out.println("No results");
-//          If it is g2g iterate
-            } else {
+            System.out.print("No Results");
+//          if it is g2g iterate
+        } else {
 //            Looping through each HashMap in ArrayList
             for (HashMap<String, String> job : someJobs) {
+                System.out.println("\n*****");
 //                Looping through each key:value pair in HashMaps
                 for (Map.Entry<String, String> prop : job.entrySet()) {
 //                    Printing through each key:value
-                    System.out.println(prop.getKey() + " : " + prop.getValue());
+                    System.out.println(prop.getKey() + ": " + prop.getValue());
                 }
-//                for how long it took to figure out where this belonged -__- *FACEPALM*
                 System.out.println("*****");
             }
         }
